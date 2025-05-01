@@ -90,6 +90,15 @@ export const ModelTypeEnum: {
 
 export type ModelTypeEnum = (typeof ModelTypeEnum)[keyof typeof ModelTypeEnum]
 
+
+export const ModelTrainingStatusEnum: {
+  PENDING: 'PENDING',
+  GENERATED: 'GENERATED',
+  FAILED: 'FAILED'
+};
+
+export type ModelTrainingStatusEnum = (typeof ModelTrainingStatusEnum)[keyof typeof ModelTrainingStatusEnum]
+
 }
 
 export type OutputImageStatusEnum = $Enums.OutputImageStatusEnum
@@ -107,6 +116,10 @@ export const EyeColorEnum: typeof $Enums.EyeColorEnum
 export type ModelTypeEnum = $Enums.ModelTypeEnum
 
 export const ModelTypeEnum: typeof $Enums.ModelTypeEnum
+
+export type ModelTrainingStatusEnum = $Enums.ModelTrainingStatusEnum
+
+export const ModelTrainingStatusEnum: typeof $Enums.ModelTrainingStatusEnum
 
 /**
  * ##  Prisma Client ʲˢ
@@ -2661,6 +2674,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum | null
     eyeColor: $Enums.EyeColorEnum | null
     bald: boolean | null
+    tensorPath: string | null
+    triggerWord: string | null
+    trainingStatus: $Enums.ModelTrainingStatusEnum | null
+    falAiRequestId: string | null
     userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -2674,6 +2691,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum | null
     eyeColor: $Enums.EyeColorEnum | null
     bald: boolean | null
+    tensorPath: string | null
+    triggerWord: string | null
+    trainingStatus: $Enums.ModelTrainingStatusEnum | null
+    falAiRequestId: string | null
     userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -2687,6 +2708,10 @@ export namespace Prisma {
     ethinicity: number
     eyeColor: number
     bald: number
+    tensorPath: number
+    triggerWord: number
+    trainingStatus: number
+    falAiRequestId: number
     images: number
     userId: number
     createdAt: number
@@ -2711,6 +2736,10 @@ export namespace Prisma {
     ethinicity?: true
     eyeColor?: true
     bald?: true
+    tensorPath?: true
+    triggerWord?: true
+    trainingStatus?: true
+    falAiRequestId?: true
     userId?: true
     createdAt?: true
     updatedAt?: true
@@ -2724,6 +2753,10 @@ export namespace Prisma {
     ethinicity?: true
     eyeColor?: true
     bald?: true
+    tensorPath?: true
+    triggerWord?: true
+    trainingStatus?: true
+    falAiRequestId?: true
     userId?: true
     createdAt?: true
     updatedAt?: true
@@ -2737,6 +2770,10 @@ export namespace Prisma {
     ethinicity?: true
     eyeColor?: true
     bald?: true
+    tensorPath?: true
+    triggerWord?: true
+    trainingStatus?: true
+    falAiRequestId?: true
     images?: true
     userId?: true
     createdAt?: true
@@ -2838,6 +2875,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath: string | null
+    triggerWord: string | null
+    trainingStatus: $Enums.ModelTrainingStatusEnum
+    falAiRequestId: string | null
     images: string[]
     userId: string
     createdAt: Date
@@ -2871,6 +2912,10 @@ export namespace Prisma {
     ethinicity?: boolean
     eyeColor?: boolean
     bald?: boolean
+    tensorPath?: boolean
+    triggerWord?: boolean
+    trainingStatus?: boolean
+    falAiRequestId?: boolean
     images?: boolean
     userId?: boolean
     createdAt?: boolean
@@ -2889,6 +2934,10 @@ export namespace Prisma {
     ethinicity?: boolean
     eyeColor?: boolean
     bald?: boolean
+    tensorPath?: boolean
+    triggerWord?: boolean
+    trainingStatus?: boolean
+    falAiRequestId?: boolean
     images?: boolean
     userId?: boolean
     createdAt?: boolean
@@ -2904,6 +2953,10 @@ export namespace Prisma {
     ethinicity?: boolean
     eyeColor?: boolean
     bald?: boolean
+    tensorPath?: boolean
+    triggerWord?: boolean
+    trainingStatus?: boolean
+    falAiRequestId?: boolean
     images?: boolean
     userId?: boolean
     createdAt?: boolean
@@ -2919,13 +2972,17 @@ export namespace Prisma {
     ethinicity?: boolean
     eyeColor?: boolean
     bald?: boolean
+    tensorPath?: boolean
+    triggerWord?: boolean
+    trainingStatus?: boolean
+    falAiRequestId?: boolean
     images?: boolean
     userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ModelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "type" | "age" | "ethinicity" | "eyeColor" | "bald" | "images" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["model"]>
+  export type ModelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "type" | "age" | "ethinicity" | "eyeColor" | "bald" | "tensorPath" | "triggerWord" | "trainingStatus" | "falAiRequestId" | "images" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["model"]>
   export type ModelInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     TrainingImages?: boolean | Model$TrainingImagesArgs<ExtArgs>
     OutputImages?: boolean | Model$OutputImagesArgs<ExtArgs>
@@ -2954,6 +3011,10 @@ export namespace Prisma {
       ethinicity: $Enums.EthinicityEnum
       eyeColor: $Enums.EyeColorEnum
       bald: boolean
+      tensorPath: string | null
+      triggerWord: string | null
+      trainingStatus: $Enums.ModelTrainingStatusEnum
+      falAiRequestId: string | null
       images: string[]
       userId: string
       createdAt: Date
@@ -3391,6 +3452,10 @@ export namespace Prisma {
     readonly ethinicity: FieldRef<"Model", 'EthinicityEnum'>
     readonly eyeColor: FieldRef<"Model", 'EyeColorEnum'>
     readonly bald: FieldRef<"Model", 'Boolean'>
+    readonly tensorPath: FieldRef<"Model", 'String'>
+    readonly triggerWord: FieldRef<"Model", 'String'>
+    readonly trainingStatus: FieldRef<"Model", 'ModelTrainingStatusEnum'>
+    readonly falAiRequestId: FieldRef<"Model", 'String'>
     readonly images: FieldRef<"Model", 'String[]'>
     readonly userId: FieldRef<"Model", 'String'>
     readonly createdAt: FieldRef<"Model", 'DateTime'>
@@ -4926,6 +4991,7 @@ export namespace Prisma {
     status: $Enums.OutputImageStatusEnum | null
     prompt: string | null
     modelId: string | null
+    falAiRequestId: string | null
     userId: string | null
   }
 
@@ -4935,6 +5001,7 @@ export namespace Prisma {
     status: $Enums.OutputImageStatusEnum | null
     prompt: string | null
     modelId: string | null
+    falAiRequestId: string | null
     userId: string | null
   }
 
@@ -4944,6 +5011,7 @@ export namespace Prisma {
     status: number
     prompt: number
     modelId: number
+    falAiRequestId: number
     userId: number
     _all: number
   }
@@ -4955,6 +5023,7 @@ export namespace Prisma {
     status?: true
     prompt?: true
     modelId?: true
+    falAiRequestId?: true
     userId?: true
   }
 
@@ -4964,6 +5033,7 @@ export namespace Prisma {
     status?: true
     prompt?: true
     modelId?: true
+    falAiRequestId?: true
     userId?: true
   }
 
@@ -4973,6 +5043,7 @@ export namespace Prisma {
     status?: true
     prompt?: true
     modelId?: true
+    falAiRequestId?: true
     userId?: true
     _all?: true
   }
@@ -5055,6 +5126,7 @@ export namespace Prisma {
     status: $Enums.OutputImageStatusEnum
     prompt: string
     modelId: string
+    falAiRequestId: string | null
     userId: string
     _count: OutputImageCountAggregateOutputType | null
     _min: OutputImageMinAggregateOutputType | null
@@ -5081,6 +5153,7 @@ export namespace Prisma {
     status?: boolean
     prompt?: boolean
     modelId?: boolean
+    falAiRequestId?: boolean
     userId?: boolean
     model?: boolean | ModelDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -5092,6 +5165,7 @@ export namespace Prisma {
     status?: boolean
     prompt?: boolean
     modelId?: boolean
+    falAiRequestId?: boolean
     userId?: boolean
     model?: boolean | ModelDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -5103,6 +5177,7 @@ export namespace Prisma {
     status?: boolean
     prompt?: boolean
     modelId?: boolean
+    falAiRequestId?: boolean
     userId?: boolean
     model?: boolean | ModelDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -5114,10 +5189,11 @@ export namespace Prisma {
     status?: boolean
     prompt?: boolean
     modelId?: boolean
+    falAiRequestId?: boolean
     userId?: boolean
   }
 
-  export type OutputImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "imageUrl" | "status" | "prompt" | "modelId" | "userId", ExtArgs["result"]["outputImage"]>
+  export type OutputImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "imageUrl" | "status" | "prompt" | "modelId" | "falAiRequestId" | "userId", ExtArgs["result"]["outputImage"]>
   export type OutputImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     model?: boolean | ModelDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -5143,6 +5219,7 @@ export namespace Prisma {
       status: $Enums.OutputImageStatusEnum
       prompt: string
       modelId: string
+      falAiRequestId: string | null
       userId: string
     }, ExtArgs["result"]["outputImage"]>
     composites: {}
@@ -5574,6 +5651,7 @@ export namespace Prisma {
     readonly status: FieldRef<"OutputImage", 'OutputImageStatusEnum'>
     readonly prompt: FieldRef<"OutputImage", 'String'>
     readonly modelId: FieldRef<"OutputImage", 'String'>
+    readonly falAiRequestId: FieldRef<"OutputImage", 'String'>
     readonly userId: FieldRef<"OutputImage", 'String'>
   }
     
@@ -8111,6 +8189,10 @@ export namespace Prisma {
     ethinicity: 'ethinicity',
     eyeColor: 'eyeColor',
     bald: 'bald',
+    tensorPath: 'tensorPath',
+    triggerWord: 'triggerWord',
+    trainingStatus: 'trainingStatus',
+    falAiRequestId: 'falAiRequestId',
     images: 'images',
     userId: 'userId',
     createdAt: 'createdAt',
@@ -8136,6 +8218,7 @@ export namespace Prisma {
     status: 'status',
     prompt: 'prompt',
     modelId: 'modelId',
+    falAiRequestId: 'falAiRequestId',
     userId: 'userId'
   };
 
@@ -8282,6 +8365,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'ModelTrainingStatusEnum'
+   */
+  export type EnumModelTrainingStatusEnumFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ModelTrainingStatusEnum'>
+    
+
+
+  /**
+   * Reference to a field of type 'ModelTrainingStatusEnum[]'
+   */
+  export type ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ModelTrainingStatusEnum[]'>
+    
+
+
+  /**
    * Reference to a field of type 'OutputImageStatusEnum'
    */
   export type EnumOutputImageStatusEnumFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutputImageStatusEnum'>
@@ -8384,6 +8481,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFilter<"Model"> | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFilter<"Model"> | $Enums.EyeColorEnum
     bald?: BoolFilter<"Model"> | boolean
+    tensorPath?: StringNullableFilter<"Model"> | string | null
+    triggerWord?: StringNullableFilter<"Model"> | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFilter<"Model"> | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: StringNullableFilter<"Model"> | string | null
     images?: StringNullableListFilter<"Model">
     userId?: StringFilter<"Model"> | string
     createdAt?: DateTimeFilter<"Model"> | Date | string
@@ -8401,6 +8502,10 @@ export namespace Prisma {
     ethinicity?: SortOrder
     eyeColor?: SortOrder
     bald?: SortOrder
+    tensorPath?: SortOrderInput | SortOrder
+    triggerWord?: SortOrderInput | SortOrder
+    trainingStatus?: SortOrder
+    falAiRequestId?: SortOrderInput | SortOrder
     images?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
@@ -8421,6 +8526,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFilter<"Model"> | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFilter<"Model"> | $Enums.EyeColorEnum
     bald?: BoolFilter<"Model"> | boolean
+    tensorPath?: StringNullableFilter<"Model"> | string | null
+    triggerWord?: StringNullableFilter<"Model"> | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFilter<"Model"> | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: StringNullableFilter<"Model"> | string | null
     images?: StringNullableListFilter<"Model">
     userId?: StringFilter<"Model"> | string
     createdAt?: DateTimeFilter<"Model"> | Date | string
@@ -8438,6 +8547,10 @@ export namespace Prisma {
     ethinicity?: SortOrder
     eyeColor?: SortOrder
     bald?: SortOrder
+    tensorPath?: SortOrderInput | SortOrder
+    triggerWord?: SortOrderInput | SortOrder
+    trainingStatus?: SortOrder
+    falAiRequestId?: SortOrderInput | SortOrder
     images?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
@@ -8460,6 +8573,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumWithAggregatesFilter<"Model"> | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumWithAggregatesFilter<"Model"> | $Enums.EyeColorEnum
     bald?: BoolWithAggregatesFilter<"Model"> | boolean
+    tensorPath?: StringNullableWithAggregatesFilter<"Model"> | string | null
+    triggerWord?: StringNullableWithAggregatesFilter<"Model"> | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumWithAggregatesFilter<"Model"> | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: StringNullableWithAggregatesFilter<"Model"> | string | null
     images?: StringNullableListFilter<"Model">
     userId?: StringWithAggregatesFilter<"Model"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Model"> | Date | string
@@ -8528,6 +8645,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumFilter<"OutputImage"> | $Enums.OutputImageStatusEnum
     prompt?: StringFilter<"OutputImage"> | string
     modelId?: StringFilter<"OutputImage"> | string
+    falAiRequestId?: StringNullableFilter<"OutputImage"> | string | null
     userId?: StringFilter<"OutputImage"> | string
     model?: XOR<ModelScalarRelationFilter, ModelWhereInput>
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -8539,6 +8657,7 @@ export namespace Prisma {
     status?: SortOrder
     prompt?: SortOrder
     modelId?: SortOrder
+    falAiRequestId?: SortOrderInput | SortOrder
     userId?: SortOrder
     model?: ModelOrderByWithRelationInput
     user?: UserOrderByWithRelationInput
@@ -8553,6 +8672,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumFilter<"OutputImage"> | $Enums.OutputImageStatusEnum
     prompt?: StringFilter<"OutputImage"> | string
     modelId?: StringFilter<"OutputImage"> | string
+    falAiRequestId?: StringNullableFilter<"OutputImage"> | string | null
     userId?: StringFilter<"OutputImage"> | string
     model?: XOR<ModelScalarRelationFilter, ModelWhereInput>
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -8564,6 +8684,7 @@ export namespace Prisma {
     status?: SortOrder
     prompt?: SortOrder
     modelId?: SortOrder
+    falAiRequestId?: SortOrderInput | SortOrder
     userId?: SortOrder
     _count?: OutputImageCountOrderByAggregateInput
     _max?: OutputImageMaxOrderByAggregateInput
@@ -8579,6 +8700,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumWithAggregatesFilter<"OutputImage"> | $Enums.OutputImageStatusEnum
     prompt?: StringWithAggregatesFilter<"OutputImage"> | string
     modelId?: StringWithAggregatesFilter<"OutputImage"> | string
+    falAiRequestId?: StringNullableWithAggregatesFilter<"OutputImage"> | string | null
     userId?: StringWithAggregatesFilter<"OutputImage"> | string
   }
 
@@ -8753,6 +8875,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -8769,6 +8895,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     userId: string
     createdAt?: Date | string
@@ -8785,6 +8915,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8801,6 +8935,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8817,6 +8955,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     userId: string
     createdAt?: Date | string
@@ -8831,6 +8973,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8844,6 +8990,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8902,6 +9052,7 @@ export namespace Prisma {
     imageUrl: string
     status?: $Enums.OutputImageStatusEnum
     prompt: string
+    falAiRequestId?: string | null
     model: ModelCreateNestedOneWithoutOutputImagesInput
     user: UserCreateNestedOneWithoutOutputImageInput
   }
@@ -8912,6 +9063,7 @@ export namespace Prisma {
     status?: $Enums.OutputImageStatusEnum
     prompt: string
     modelId: string
+    falAiRequestId?: string | null
     userId: string
   }
 
@@ -8920,6 +9072,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     model?: ModelUpdateOneRequiredWithoutOutputImagesNestedInput
     user?: UserUpdateOneRequiredWithoutOutputImageNestedInput
   }
@@ -8930,6 +9083,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
     modelId?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -8939,6 +9093,7 @@ export namespace Prisma {
     status?: $Enums.OutputImageStatusEnum
     prompt: string
     modelId: string
+    falAiRequestId?: string | null
     userId: string
   }
 
@@ -8947,6 +9102,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type OutputImageUncheckedUpdateManyInput = {
@@ -8955,6 +9111,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
     modelId?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -9239,6 +9396,13 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
+  export type EnumModelTrainingStatusEnumFilter<$PrismaModel = never> = {
+    equals?: $Enums.ModelTrainingStatusEnum | EnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    in?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    not?: NestedEnumModelTrainingStatusEnumFilter<$PrismaModel> | $Enums.ModelTrainingStatusEnum
+  }
+
   export type StringNullableListFilter<$PrismaModel = never> = {
     equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     has?: string | StringFieldRefInput<$PrismaModel> | null
@@ -9260,6 +9424,10 @@ export namespace Prisma {
     ethinicity?: SortOrder
     eyeColor?: SortOrder
     bald?: SortOrder
+    tensorPath?: SortOrder
+    triggerWord?: SortOrder
+    trainingStatus?: SortOrder
+    falAiRequestId?: SortOrder
     images?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
@@ -9278,6 +9446,10 @@ export namespace Prisma {
     ethinicity?: SortOrder
     eyeColor?: SortOrder
     bald?: SortOrder
+    tensorPath?: SortOrder
+    triggerWord?: SortOrder
+    trainingStatus?: SortOrder
+    falAiRequestId?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -9291,6 +9463,10 @@ export namespace Prisma {
     ethinicity?: SortOrder
     eyeColor?: SortOrder
     bald?: SortOrder
+    tensorPath?: SortOrder
+    triggerWord?: SortOrder
+    trainingStatus?: SortOrder
+    falAiRequestId?: SortOrder
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -9354,6 +9530,16 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type EnumModelTrainingStatusEnumWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ModelTrainingStatusEnum | EnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    in?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    not?: NestedEnumModelTrainingStatusEnumWithAggregatesFilter<$PrismaModel> | $Enums.ModelTrainingStatusEnum
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumModelTrainingStatusEnumFilter<$PrismaModel>
+    _max?: NestedEnumModelTrainingStatusEnumFilter<$PrismaModel>
+  }
+
   export type ModelScalarRelationFilter = {
     is?: ModelWhereInput
     isNot?: ModelWhereInput
@@ -9393,6 +9579,7 @@ export namespace Prisma {
     status?: SortOrder
     prompt?: SortOrder
     modelId?: SortOrder
+    falAiRequestId?: SortOrder
     userId?: SortOrder
   }
 
@@ -9402,6 +9589,7 @@ export namespace Prisma {
     status?: SortOrder
     prompt?: SortOrder
     modelId?: SortOrder
+    falAiRequestId?: SortOrder
     userId?: SortOrder
   }
 
@@ -9411,6 +9599,7 @@ export namespace Prisma {
     status?: SortOrder
     prompt?: SortOrder
     modelId?: SortOrder
+    falAiRequestId?: SortOrder
     userId?: SortOrder
   }
 
@@ -9676,6 +9865,10 @@ export namespace Prisma {
 
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
+  }
+
+  export type EnumModelTrainingStatusEnumFieldUpdateOperationsInput = {
+    set?: $Enums.ModelTrainingStatusEnum
   }
 
   export type ModelUpdateimagesInput = {
@@ -9998,6 +10191,13 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
+  export type NestedEnumModelTrainingStatusEnumFilter<$PrismaModel = never> = {
+    equals?: $Enums.ModelTrainingStatusEnum | EnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    in?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    not?: NestedEnumModelTrainingStatusEnumFilter<$PrismaModel> | $Enums.ModelTrainingStatusEnum
+  }
+
   export type NestedEnumModelTypeEnumWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.ModelTypeEnum | EnumModelTypeEnumFieldRefInput<$PrismaModel>
     in?: $Enums.ModelTypeEnum[] | ListEnumModelTypeEnumFieldRefInput<$PrismaModel>
@@ -10063,6 +10263,16 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type NestedEnumModelTrainingStatusEnumWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ModelTrainingStatusEnum | EnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    in?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ModelTrainingStatusEnum[] | ListEnumModelTrainingStatusEnumFieldRefInput<$PrismaModel>
+    not?: NestedEnumModelTrainingStatusEnumWithAggregatesFilter<$PrismaModel> | $Enums.ModelTrainingStatusEnum
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumModelTrainingStatusEnumFilter<$PrismaModel>
+    _max?: NestedEnumModelTrainingStatusEnumFilter<$PrismaModel>
+  }
+
   export type NestedEnumOutputImageStatusEnumFilter<$PrismaModel = never> = {
     equals?: $Enums.OutputImageStatusEnum | EnumOutputImageStatusEnumFieldRefInput<$PrismaModel>
     in?: $Enums.OutputImageStatusEnum[] | ListEnumOutputImageStatusEnumFieldRefInput<$PrismaModel>
@@ -10085,6 +10295,7 @@ export namespace Prisma {
     imageUrl: string
     status?: $Enums.OutputImageStatusEnum
     prompt: string
+    falAiRequestId?: string | null
     model: ModelCreateNestedOneWithoutOutputImagesInput
   }
 
@@ -10094,6 +10305,7 @@ export namespace Prisma {
     status?: $Enums.OutputImageStatusEnum
     prompt: string
     modelId: string
+    falAiRequestId?: string | null
   }
 
   export type OutputImageCreateOrConnectWithoutUserInput = {
@@ -10114,6 +10326,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -10129,6 +10345,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -10193,6 +10413,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumFilter<"OutputImage"> | $Enums.OutputImageStatusEnum
     prompt?: StringFilter<"OutputImage"> | string
     modelId?: StringFilter<"OutputImage"> | string
+    falAiRequestId?: StringNullableFilter<"OutputImage"> | string | null
     userId?: StringFilter<"OutputImage"> | string
   }
 
@@ -10223,6 +10444,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFilter<"Model"> | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFilter<"Model"> | $Enums.EyeColorEnum
     bald?: BoolFilter<"Model"> | boolean
+    tensorPath?: StringNullableFilter<"Model"> | string | null
+    triggerWord?: StringNullableFilter<"Model"> | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFilter<"Model"> | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: StringNullableFilter<"Model"> | string | null
     images?: StringNullableListFilter<"Model">
     userId?: StringFilter<"Model"> | string
     createdAt?: DateTimeFilter<"Model"> | Date | string
@@ -10282,6 +10507,7 @@ export namespace Prisma {
     imageUrl: string
     status?: $Enums.OutputImageStatusEnum
     prompt: string
+    falAiRequestId?: string | null
     user: UserCreateNestedOneWithoutOutputImageInput
   }
 
@@ -10290,6 +10516,7 @@ export namespace Prisma {
     imageUrl: string
     status?: $Enums.OutputImageStatusEnum
     prompt: string
+    falAiRequestId?: string | null
     userId: string
   }
 
@@ -10399,6 +10626,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -10414,6 +10645,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     userId: string
     createdAt?: Date | string
@@ -10470,6 +10705,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10485,6 +10724,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10531,6 +10774,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -10546,6 +10793,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     userId: string
     createdAt?: Date | string
@@ -10602,6 +10853,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10617,6 +10872,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10750,6 +11009,7 @@ export namespace Prisma {
     status?: $Enums.OutputImageStatusEnum
     prompt: string
     modelId: string
+    falAiRequestId?: string | null
   }
 
   export type ModelCreateManyUserInput = {
@@ -10760,6 +11020,10 @@ export namespace Prisma {
     ethinicity: $Enums.EthinicityEnum
     eyeColor: $Enums.EyeColorEnum
     bald: boolean
+    tensorPath?: string | null
+    triggerWord?: string | null
+    trainingStatus?: $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: string | null
     images?: ModelCreateimagesInput | string[]
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -10776,6 +11040,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     model?: ModelUpdateOneRequiredWithoutOutputImagesNestedInput
   }
 
@@ -10785,6 +11050,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
     modelId?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type OutputImageUncheckedUpdateManyWithoutUserInput = {
@@ -10793,6 +11059,7 @@ export namespace Prisma {
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
     modelId?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ModelUpdateWithoutUserInput = {
@@ -10803,6 +11070,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10818,6 +11089,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10833,6 +11108,10 @@ export namespace Prisma {
     ethinicity?: EnumEthinicityEnumFieldUpdateOperationsInput | $Enums.EthinicityEnum
     eyeColor?: EnumEyeColorEnumFieldUpdateOperationsInput | $Enums.EyeColorEnum
     bald?: BoolFieldUpdateOperationsInput | boolean
+    tensorPath?: NullableStringFieldUpdateOperationsInput | string | null
+    triggerWord?: NullableStringFieldUpdateOperationsInput | string | null
+    trainingStatus?: EnumModelTrainingStatusEnumFieldUpdateOperationsInput | $Enums.ModelTrainingStatusEnum
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     images?: ModelUpdateimagesInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10867,6 +11146,7 @@ export namespace Prisma {
     imageUrl: string
     status?: $Enums.OutputImageStatusEnum
     prompt: string
+    falAiRequestId?: string | null
     userId: string
   }
 
@@ -10893,6 +11173,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     user?: UserUpdateOneRequiredWithoutOutputImageNestedInput
   }
 
@@ -10901,6 +11182,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -10909,6 +11191,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     status?: EnumOutputImageStatusEnumFieldUpdateOperationsInput | $Enums.OutputImageStatusEnum
     prompt?: StringFieldUpdateOperationsInput | string
+    falAiRequestId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
 

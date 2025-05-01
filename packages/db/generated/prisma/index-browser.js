@@ -136,6 +136,10 @@ exports.Prisma.ModelScalarFieldEnum = {
   ethinicity: 'ethinicity',
   eyeColor: 'eyeColor',
   bald: 'bald',
+  tensorPath: 'tensorPath',
+  triggerWord: 'triggerWord',
+  trainingStatus: 'trainingStatus',
+  falAiRequestId: 'falAiRequestId',
   images: 'images',
   userId: 'userId',
   createdAt: 'createdAt',
@@ -155,6 +159,7 @@ exports.Prisma.OutputImageScalarFieldEnum = {
   status: 'status',
   prompt: 'prompt',
   modelId: 'modelId',
+  falAiRequestId: 'falAiRequestId',
   userId: 'userId'
 };
 
@@ -208,6 +213,12 @@ exports.EyeColorEnum = exports.$Enums.EyeColorEnum = {
   BLUE: 'BLUE',
   HAZEL: 'HAZEL',
   GRAY: 'GRAY'
+};
+
+exports.ModelTrainingStatusEnum = exports.$Enums.ModelTrainingStatusEnum = {
+  PENDING: 'PENDING',
+  GENERATED: 'GENERATED',
+  FAILED: 'FAILED'
 };
 
 exports.OutputImageStatusEnum = exports.$Enums.OutputImageStatusEnum = {
