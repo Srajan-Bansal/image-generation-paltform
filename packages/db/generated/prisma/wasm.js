@@ -140,17 +140,11 @@ exports.Prisma.ModelScalarFieldEnum = {
   triggerWord: 'triggerWord',
   trainingStatus: 'trainingStatus',
   falAiRequestId: 'falAiRequestId',
+  zipUrl: 'zipUrl',
   images: 'images',
   userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
-};
-
-exports.Prisma.TrainingImageScalarFieldEnum = {
-  id: 'id',
-  imageUrl: 'imageUrl',
-  modelId: 'modelId',
-  userId: 'userId'
 };
 
 exports.Prisma.OutputImageScalarFieldEnum = {
@@ -230,7 +224,6 @@ exports.OutputImageStatusEnum = exports.$Enums.OutputImageStatusEnum = {
 exports.Prisma.ModelName = {
   User: 'User',
   Model: 'Model',
-  TrainingImage: 'TrainingImage',
   OutputImage: 'OutputImage',
   Pack: 'Pack',
   PackPrompt: 'PackPrompt'
